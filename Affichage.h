@@ -3,6 +3,6 @@
 
 #include "Jeu.h"
 
-void AffichageTexte(Jeu *);
+void AffichageTexte(Jeu * jeu);
 
 #endif

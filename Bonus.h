@@ -1,5 +1,6 @@
 #ifndef BONUS_H_INCLUDED
 #define BONUS_H_INCLUDED
+#include "Personnage.h"
 
 typedef struct
 {

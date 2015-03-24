@@ -1,6 +1,6 @@
 #ifndef LISTEPERSONNAGE_H_INCLUDED
 #define LISTEPERSONNAGE_H_INCLUDED
-
+#include "Personnage.h"
 
 typedef struct
 {

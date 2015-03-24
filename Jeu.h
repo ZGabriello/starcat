@@ -1,6 +1,7 @@
 #ifndef JEU_H_INCLUDED
 #define JEU_H_INCLUDED
 
+
 typedef struct
 {
     Terrain terrain;

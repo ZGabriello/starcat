@@ -14,7 +14,7 @@ void ReduireVie (Personnage * personnage);
 
 void AugmenterVie (Personnage * personnage);
 
-void initialiserTerrain (Personnage * personnage);
+void initialiserPersonnage (Personnage * personnage);
 
 void DeplacerGauche (Personnage * personnage, Terrain * terrain);
 

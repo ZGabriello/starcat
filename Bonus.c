@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "Personnage.h"
 
-void Vie (Personnage * Personnage)
+void Vie (Personnage * personnage)
 {
-    personnage.vie++;
+    personnage->vie++;
 }

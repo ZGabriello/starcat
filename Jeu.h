@@ -1,13 +1,17 @@
 #ifndef JEU_H_INCLUDED
 #define JEU_H_INCLUDED
 
+#include "Terrain.h"
+#include "ListePersonnage.h"
+#include "ListeMonstre.h"
+#include "ListeBonus.h"
 
 typedef struct
 {
     Terrain terrain;
     ListePersonnage listePersonnage;
     ListeMonstre listeMonstre;
-    Bonus bonus;
+    ListeBonus bonus;
 } Jeu;
 
 void InitialiserJeu (Jeu * pJeu);

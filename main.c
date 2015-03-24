@@ -2,15 +2,15 @@
 #include <stdlib.h>
 
 #include "Jeu.h"
-#include "Affichage"
+#include "Affichage.h"
 
 
 int main ()
 {
     printf("coucou");
     Jeu jeu;
-    initialiserJeu(&jeu);
-/*boucle du affichage */
+    InitialiserJeu(&jeu);
+/*boucle de affichage */
     LibererJeu(&jeu);
     return 0;
 }

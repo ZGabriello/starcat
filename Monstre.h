@@ -7,16 +7,17 @@ typedef struct
         int vie;
 	int x;
 	int y;
+	enum {Droite,Gauche} direction;
 } Monstre;
 
-void InitialiserMonstre(monstre *);
+void InitialiserMonstre(Monstre *monstre);
 
-void DeplacerGaucheMonstre(monstre *, const terrain *);
+void DeplacerGaucheMonstre(Monstre *monstre, const Terrain *terrain);
 
-void DeplacerDroiteMonstre(monstre *, const terrain *);
+void DeplacerDroiteMonstre(Monstre *monstre, const Terrain *terrain);
 
-void Tirer(monstre *, const terrain *);
+void TirerMonstre(Monstre *monstre, const Terrain *terrain);
 
-void ReduireVie(monstre *);
+void ReduireVieMosntre(Monstre *monstre);
 
 #endif

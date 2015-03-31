@@ -3,6 +3,6 @@
 
 #include "Jeu.h"
 
-void AffichageTexte(Jeu * jeu);
+void ncursBoucle(Jeu * jeu);
 
 #endif

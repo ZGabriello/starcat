@@ -10,20 +10,24 @@ typedef struct
     int y;
 } Personnage;
 
-void ReduireVie (Personnage * personnage);
+void ReduireViePersonnage (Personnage * personnage);
 
 void AugmenterVie (Personnage * personnage);
 
-void initialiserPersonnage (Personnage * personnage);
+void InitialiserPersonnage (Personnage * personnage);
 
-void DeplacerGauche (Personnage * personnage, Terrain * terrain);
+void DeplacerGauchePersonnage (Personnage * personnage, const Terrain * terrain);
 
-void DeplacerDroite (Personnage * personnage, Terrain * terrain);
+void DeplacerDroitePersonnage (Personnage * personnage, const Terrain * terrain);
 
 void Sauter (Personnage * personnage, Terrain * terrain);
 
-void Tirer (Personnage * personnage, Terrain * terrain);
+void TirerPersonnage (Personnage * personnage, Terrain * terrain);
 
 void DetruirePersonnage (Personnage * personnage, Terrain * terrain);
+
+int PersonnageGetX (const Personnage * personnage);
+
+int PersonnageGetY (const Personnage * personnage);
 
 #endif // PERSONNAGE_H_INCLUDED

@@ -4,14 +4,16 @@
 #include "Jeu.h"
 #include "Affichage.h"
 
-
+/*
 int main ()
 {
     printf("coucou");
     Jeu jeu;
     InitialiserJeu(&jeu);
+*/
 /*boucle de affichage */
-    LibererJeu(&jeu);
+ /*   LibererJeu(&jeu);
     return 0;
 }
 
+*/

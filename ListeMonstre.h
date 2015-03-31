@@ -5,12 +5,12 @@
 
 typedef struct
 {
-      Monstre * monstre; 
+      Monstre * monstre;
       int nbMonstre;
 } ListeMonstre;
 
-void AjouterMonstre(Monstre monstre , ListeMonstre listeMonstre *);
+void AjouterMonstre(Monstre * monstre, ListeMonstre *listeMonstre);
 
-void SupprimerMonstre(Monstre monstre *, ListeMonstre listeMonstre *);
+void SupprimerMonstre(Monstre * monstre, ListeMonstre *listeMonstre);
 
-#endif 
+#endif

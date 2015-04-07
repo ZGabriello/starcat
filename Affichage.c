@@ -14,9 +14,8 @@
 
 void ncursAff( WINDOW* win, const Jeu *pJeu)
 {
-	int x,y;
-//Pour monstre
-//	int i_fant;
+	int x,y,v;
+    int i_monstre;
 
 	const Terrain *pTer = jeuGetConstTerrainPtr(pJeu);
 	const Personnage *personnage = jeuGetConstPersonnagePtr(pJeu);
@@ -26,11 +25,19 @@ void ncursAff( WINDOW* win, const Jeu *pJeu)
 	for(x=0;x<GetDimX(pTer);++x)
 		for(y=0;y<GetDimY(pTer);++y)
 			mvwprintw( win, y, x, "%c", GetTerrainXY(pTer,x,y) );
-// Pour l'affichage des monstre
- /*   for (i_fant=0; i_fant<pJeu->nb_fantomes; i_fant++)
-        mvwprintw( win, pJeu->tab_fantomes[i_fant].y, pJeu->tab_fantomes[i_fant].x, "F");
-*/
+    // Pour l'affichage des monstre
+    for (i_monstre=0; i_monstre<pJeu->listeMonstre.nbMonstre; i_monstre++)
+        mvwprintw( win, pJeu->tabMonstre[i_monstre].y+2, pJeu->tabMonstre[i_monstre].x, "M");
+
 	mvwprintw( win, PersonnageGetY(personnage), PersonnageGetX(personnage), "*");
+
+    // affichage du Titre et de la vie dans winMenu
+    mvwprintw(win,0, 8, " STARCAT TROOPER");
+	mvwprintw(win, 1, 0, "Vie :");
+	for (v=3;v>0;v--)
+    {
+        mvwprintw( win, 1, 6+v , "C");
+    }
 
 	wmove( win, PersonnageGetY(personnage), PersonnageGetX(personnage));
 }
@@ -39,6 +46,7 @@ void ncursAff( WINDOW* win, const Jeu *pJeu)
 void ncursBoucle(Jeu *pJeu)
 {
 	WINDOW *win;
+//	WINDOW *winMenu
 	int c;
 	int continue_boucle;
 
@@ -57,6 +65,9 @@ void ncursBoucle(Jeu *pJeu)
 	/* Creation d'une nouvelle fenetre en mode texte */
 	/* => fenetre de dimension et position ( WIDTH, HEIGHT, STARTX,STARTY) */
 	win = newwin( GetDimY(jeuGetConstTerrainPtr(pJeu)), GetDimX(jeuGetConstTerrainPtr(pJeu)), 10, 5 );
+	// creation de la fenetre pour les menus
+//	winMenu=newwin(5,30,4,5);
+
 	keypad(win, TRUE);		/* pour que les flèches soient traitées (il faut le faire après création de la fenêtre) */
 
 	/* notimeout(win,true); */

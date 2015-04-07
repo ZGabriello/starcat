@@ -3,9 +3,9 @@
 
 void InitialiserPersonnage(Personnage *personnage)
 {
-  personnage->vie=3;
-  personnage->x=1;
-  personnage->y=1;
+    personnage->vie=3;
+    personnage->x=1;
+    personnage->y=7;
 }
 
 void ReduireViePersonnage (Personnage * personnage)
@@ -38,4 +38,14 @@ int PersonnageGetX (const Personnage * personnage)
 int PersonnageGetY (const Personnage * personnage)
 {
     return personnage->y;
+}
+
+int PersonnageGetVie ( const Personnage * personnage)
+{
+    return personnage->vie;
+}
+
+void TirerPersonnage(Personnage * personnage,Terrain * terrain)
+{
+
 }

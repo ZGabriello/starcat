@@ -1,19 +1,35 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-#include "Jeu.h"
+ #define JEU_NCURSES
+/* #define JEU_SDL */
+
+#ifdef JEU_NCURSES
 #include "Affichage.h"
+#endif
 
-/*
-int main ()
+#ifdef JEU_SDL
+#include "sdlJeu.h"
+#endif
+
+
+int main ( int argc, char** argv )
 {
-    printf("coucou");
-    Jeu jeu;
-    InitialiserJeu(&jeu);
-*/
-/*boucle de affichage */
- /*   LibererJeu(&jeu);
-    return 0;
-}
 
-*/
+#ifdef JEU_NCURSES
+	Jeu jeu;
+	jeuInit(&jeu);
+	ncursBoucle(&jeu);
+	jeuLibere(&jeu);
+#endif
+
+
+#ifdef JEU_SDL
+	sdlJeu sj;
+	sdljeuInit( &sj );
+	sdljeuBoucle( &sj );
+	sdljeuLibere( &sj );
+#endif
+
+	printf("Fin\n");
+	return 0;
+}

@@ -1,10 +1,12 @@
 #ifndef _MONSTRE_H
 #define _MONSTRE_H
 
+#include "Terrain.h"
+
 typedef struct
 {
-        char nom[20];
-        int vie;
+    char nom[20];
+    int vie;
 	int x;
 	int y;
 	enum {Droite,Gauche} direction;

@@ -30,4 +30,6 @@ int PersonnageGetX (const Personnage * personnage);
 
 int PersonnageGetY (const Personnage * personnage);
 
+int PersonnageGetVie ( const Personnage * personnage);
+
 #endif // PERSONNAGE_H_INCLUDED

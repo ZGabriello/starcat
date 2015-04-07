@@ -2,6 +2,7 @@
 #include "Personnage.h"
 #include <malloc.h>
 #include <stdlib.h>
+#include <assert.h>
 
 void jeuInit(Jeu *pJeu)
 {
@@ -11,14 +12,16 @@ void jeuInit(Jeu *pJeu)
 	InitialiserTerrain(&(pJeu->terrain));
 
 	pJeu->listeMonstre.nbMonstre = 5;
-	pJeu->tabMonstre = malloc(pJeu->listeMonstre.nbMonstre*sizeof(pJeu->listeMonstre.monstre));
+	pJeu->tabMonstre = malloc(pJeu->listeMonstre.nbMonstre*sizeof(Monstre));
 
 	for (i_monstre=0; i_monstre<pJeu->listeMonstre.nbMonstre; i_monstre++)
     {
         do {
-            x = rand()%pJeu->terrain.dimx;
-            y = rand()%pJeu->terrain.dimy;
-        } while (!TestPositionValide(&(pJeu->terrain), x, y));
+            x=0;
+            {   x = rand()%pJeu->terrain.dimx;
+                y = rand()%pJeu->terrain.dimy;
+            }
+        } while (!TestPositionValide(&(pJeu->terrain), x, y) && (x<4));
 
         pJeu->tabMonstre[i_monstre].x = x;
         pJeu->tabMonstre[i_monstre].y = y;
